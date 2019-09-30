@@ -49,19 +49,12 @@ class App extends Component {
       padding: '8px',
       cursor: 'pointer'
     };
-    return (
-      <div className="App">
-        <h3>Hi i am a react App</h3>
-        <p>This is realy working</p>
-        <button style ={style}
-          onClick={this.togglePersonsHandler}>
-          Toggle Persons
-        </button>
-        {/* <Person name='Max' age='29'/> 
-        <Person name='Manu' age='28'/> 
-        <Person name='Stefani' age='26'>my hobies are: Skiing</Person>  */}
-        {this.state.showPersons ?
-          <div>
+
+    let persons = null;
+
+    if(this.state.showPersons){
+     persons =( 
+     <div>
             <Person 
             name={this.state.persons[0].name} 
             age={this.state.persons[0].age}/>
@@ -77,8 +70,20 @@ class App extends Component {
               click={this.switchNameHandler.bind(this, 'Max!!!!')}>
               Child from props text
             </Person>          
-          </div> : null
-        }
+     </div>     )   
+    }
+    return (
+      <div className="App">
+        <h3>Hi i am a react App</h3>
+        <p>This is realy working</p>
+        <button style ={style}
+          onClick={this.togglePersonsHandler}>
+          Toggle Persons
+        </button>
+        {/* <Person name='Max' age='29'/> 
+        <Person name='Manu' age='28'/> 
+        <Person name='Stefani' age='26'>my hobies are: Skiing</Person>  */} 
+        {persons}         
        </div>
     );
     // return React.createElement('div',{className:'App'},React.createElement('h1', null, 'Hi I\'m a React App !!!!')) 
