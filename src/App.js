@@ -10,7 +10,7 @@ class App extends Component {
       {name:'Manu', age: 28},
       {name:'Stefani', age:26}, 
     ],
-    userName: 'admin'
+    showPersons: false
   }
   switchNameHandler = (changeName) => {
     //this.state.persons[0].name = 'Maximilian';
@@ -55,7 +55,7 @@ class App extends Component {
         <p>This is realy working</p>
         <button style ={style}
           onClick={this.togglePersonsHandler}>
-          Switch Name
+          Toggle Persons
         </button>
         {/* <Person name='Max' age='29'/> 
         <Person name='Manu' age='28'/> 
@@ -79,7 +79,7 @@ class App extends Component {
             </Person>          
           </div> : null
         }
-      </div>
+       </div>
     );
     // return React.createElement('div',{className:'App'},React.createElement('h1', null, 'Hi I\'m a React App !!!!')) 
   }
