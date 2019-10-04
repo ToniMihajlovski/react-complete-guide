@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import './App.css'
+import c from './App.modules.css'
 import Person from './Person/Person';
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary'
 
 
 class App extends Component {
@@ -71,13 +72,14 @@ class App extends Component {
      <div>
        {this.state.persons.map((person, index) => 
         {
-          return <Person 
+          return <ErrorBoundary key={person.id}>         
+            <Person 
           click = {() => this.deletePersonHandler(index)}
           name={person.name}
           age={person.age}
-          key={person.id}
           changed={(event) => this.nameChangeHandler(event, person.id)}
           />
+          </ErrorBoundary>
         })}
      </div>);
      
@@ -100,6 +102,7 @@ class App extends Component {
       <div className='App'>
         <h3>Hi i am a react App</h3>
         <p className={classes.join(' ')}>This is realy working</p>
+        <p className={c.Asd}>HEY</p>
         <button style ={style}
           onClick={this.togglePersonsHandler}>
           Toggle Persons
