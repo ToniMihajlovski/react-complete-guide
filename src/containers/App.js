@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import c from './App.modules.css'
-import Person from '../components/Persons/Person/Person';
+import Persons from '../components/Persons/Persons';
 
 
 
@@ -68,19 +68,14 @@ class App extends Component {
     let persons = null;
 
     if(this.state.showPersons){
-     persons =( 
+     persons = ( 
      <div>
-       {this.state.persons.map((person, index) => 
-        {            
-         return <Person 
-          click = {() => this.deletePersonHandler(index)}
-          name={person.name}
-          age={person.age}
-          key={person.id}
-          changed={(event) => this.nameChangeHandler(event, person.id)}
-          />        
-        })}
-     </div>);
+       <Persons 
+       persons = {this.state.persons} 
+       clicked = {this.deletePersonHandler}
+       changed = {this.nameChangeHandler}/>
+     </div>
+     );
      
      style.backgroundColor = 'red';
     }
