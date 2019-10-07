@@ -31,7 +31,7 @@ const cockpit = (props) => {
 
     return(
         <div>
-            <h3>Hi i am a react App</h3>
+            <h3>{props.title}</h3>
             <p className={classes.join(' ')}>This is realy working</p>
             <button style ={style}
             onClick={props.clicked}>
