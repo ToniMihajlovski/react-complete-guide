@@ -1,6 +1,7 @@
 import React from 'react';
 import c from './Cockpit.css';
 
+
 const cockpit = (props) => {
 
     const classes = [];
@@ -15,12 +16,25 @@ const cockpit = (props) => {
       classes.push('bold'); //classes = [red bold]
     }
 
+    const style = {
+      backgroundColor: 'green',
+      color: 'white',
+      font: 'inherit',
+      border: '1px solid blue',
+      padding: '8px',
+      cursor: 'pointer',
+      
+    };
+    if(props.showPersons){
+      style.backgroundColor = 'red';
+    }
+
     return(
         <div>
             <h3>Hi i am a react App</h3>
             <p className={classes.join(' ')}>This is realy working</p>
             <button style ={style}
-            onClick={this.togglePersonsHandler}>
+            onClick={props.clicked}>
             Toggle Persons
             </button>
         </div>
