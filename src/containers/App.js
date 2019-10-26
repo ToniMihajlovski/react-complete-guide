@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import c from './App.modules.css'
+import styles from './App.module.css';
 import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
 import withClass from '../hoc/withClass';
@@ -95,4 +95,4 @@ class App extends Component {
     // return React.createElement('div',{className:'App'},React.createElement('h1', null, 'Hi I\'m a React App !!!!')) 
   }
 }
-export default withClass(App, 'App');
+export default withClass(App, 'app');

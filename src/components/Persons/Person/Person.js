@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import Auxilliary from '../../../hoc/Auxilliary.js'
+import Auxilliary from '../../../hoc/Auxilliary.js';
+import withClass from '../../../hoc/withClass.js'
 import './Person.css';
 
 class Person extends Component {
@@ -7,7 +8,10 @@ class Person extends Component {
         console.log('[Person.js] rendering....');
          return (
             <Auxilliary>
-                <p  onClick={this.props.click}>I'm {this.props.name} and I'm {this.props.age} Old, and this is a random number {Math.floor(Math.random() * 30)} </p>
+                <p  onClick={this.props.click}>
+                    I'm {this.props.name} and I'm {this.props.age} Old, 
+                    and this is a random number {Math.floor(Math.random() * 30)} 
+                </p>
                 <p >{this.props.children}</p>
                 <input type="text" onChange={this.props.changed} value={this.props.name}/>   
             </Auxilliary>
@@ -15,4 +19,4 @@ class Person extends Component {
     }
 }
 
-export default Person;
+export default withClass(Person, 'Person');
